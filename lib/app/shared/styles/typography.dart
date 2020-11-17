@@ -51,22 +51,26 @@ class TEXT extends StatelessWidget {
   final String text;
   final FontWeight weight;
   final bool isPrimary;
+  final bool noMargin;
+  final double size;
 
   const TEXT({
     this.text,
     this.weight,
     this.isPrimary: false,
+    this.noMargin = false,
+    this.size = 14,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: EdgeInsets.only(bottom: !noMargin ? 8.0 : 0.0),
       child: Text(
         text,
         style: GoogleFonts.openSans(
           fontWeight: weight,
-          fontSize: 14,
+          fontSize: size,
           color: isPrimary ? AppStyles.primaryColor : AppStyles.bodyColor,
         ),
       ),
