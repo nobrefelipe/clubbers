@@ -34,6 +34,7 @@ class AppStyles {
   static const EdgeInsets spacing = EdgeInsets.all(16.0);
   static const EdgeInsets spacingSmall = EdgeInsets.all(8.0);
   static const EdgeInsets spacingBig = EdgeInsets.all(24.0);
+  static const EdgeInsets spacingExtra = EdgeInsets.all(32.0);
 
   /*
     BOX SHADOW
