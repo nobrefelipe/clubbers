@@ -60,12 +60,15 @@ class TEXT extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.openSans(
-        fontWeight: weight,
-        fontSize: 16,
-        color: isPrimary ? AppStyles.primaryColor : AppStyles.bodyColor,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Text(
+        text,
+        style: GoogleFonts.openSans(
+          fontWeight: weight,
+          fontSize: 14,
+          color: isPrimary ? AppStyles.primaryColor : AppStyles.bodyColor,
+        ),
       ),
     );
   }
