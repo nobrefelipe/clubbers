@@ -33,6 +33,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  google_fonts: ^1.1.1
   flutter_icons:
   flutter_svg: ^0.19.1
   dio: ^3.0.10

@@ -1,3 +1,4 @@
+import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -6,9 +7,10 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: Modular.navigatorKey,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Slidy',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: AppStyles.primaryColor,
       ),
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
