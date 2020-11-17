@@ -49,7 +49,7 @@ class AppStyles {
     BOX SHADOW
   */
   static BoxShadow shadowBoxDecoration = BoxShadow(
-    color: Colors.grey.withOpacity(0.25),
+    color: Colors.grey.withOpacity(0.3),
     spreadRadius: 0,
     blurRadius: 20,
     offset: Offset(0, 0),
