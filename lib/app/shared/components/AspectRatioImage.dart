@@ -35,8 +35,9 @@ class AspectRatioImage extends StatelessWidget {
         borderRadius: AppStyles.borderRadius15,
         child: AspectRatio(
           aspectRatio: ratio,
-          child: Image(
-            image: AssetImage(image),
+          child: FadeInImage.assetNetwork(
+            image: image,
+            placeholder: './lib/assets/img/placeholder.png',
             fit: BoxFit.cover, // use this
           ),
         ),
