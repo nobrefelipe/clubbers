@@ -8,12 +8,14 @@ class Heading extends StatelessWidget {
   final FontWeight weight;
   final bool isPrimary;
   final int heading;
+  final double lineheight;
 
   const Heading({
     this.text,
     this.weight,
     this.isPrimary: true,
     this.heading,
+    this.lineheight = 1,
   });
 
   @override
@@ -48,6 +50,7 @@ class Heading extends StatelessWidget {
         fontSize: fontSize,
         color: isPrimary ? AppStyles.primaryColor : AppStyles.bodyColor,
         letterSpacing: -0.8,
+        height: lineheight,
       ),
     );
   }
