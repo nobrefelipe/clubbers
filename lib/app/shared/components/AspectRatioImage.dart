@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -35,10 +36,15 @@ class AspectRatioImage extends StatelessWidget {
         borderRadius: AppStyles.borderRadius15,
         child: AspectRatio(
           aspectRatio: ratio,
-          child: FadeInImage.assetNetwork(
-            image: image,
-            placeholder: './lib/assets/img/placeholder.png',
-            fit: BoxFit.cover, // use this
+          child: CachedNetworkImage(
+            placeholder: (_, __) => Container(
+              child: Image.asset(
+                './lib/assets/img/placeholder.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+            imageUrl: image,
+            fit: BoxFit.cover,
           ),
         ),
       ),
