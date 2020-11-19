@@ -33,6 +33,12 @@ class Heading extends StatelessWidget {
       case 4:
         fontSize = 26.0;
         break;
+      case 5:
+        fontSize = 22.0;
+        break;
+      case 6:
+        fontSize = 20.0;
+        break;
     }
 
     return Text(
