@@ -22,26 +22,36 @@ class SVGIcon extends StatelessWidget {
   final String icon;
   final Color color;
   final bool active;
-  SVGIcon({this.icon, this.color, this.active = false});
+  final double scale;
+
+  SVGIcon({
+    this.icon,
+    this.color,
+    this.scale = 1.0,
+    this.active = false,
+  });
 
   final String path = "./lib/assets/svg";
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      // path to the svg icon
-      '$path/$icon.svg',
-      // if a color is passed
-      color: color != null
-          // set color passed from parent
-          ? color
-          // otherwise if active is set
-          : active
-              // set icon color with the primary color
-              ? AppStyles.primaryColor
-              // otherwise set it with opaque color
-              : AppStyles.bodyColor.withOpacity(0.5),
-      matchTextDirection: true,
+    return Transform.scale(
+      scale: scale,
+      child: SvgPicture.asset(
+        // path to the svg icon
+        '$path/$icon.svg',
+        // if a color is passed
+        color: color != null
+            // set color passed from parent
+            ? color
+            // otherwise if active is set
+            : active
+                // set icon color with the primary color
+                ? AppStyles.primaryColor
+                // otherwise set it with opaque color
+                : AppStyles.bodyColor.withOpacity(0.5),
+        matchTextDirection: true,
+      ),
     );
   }
 }
