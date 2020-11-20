@@ -18,7 +18,11 @@ class ShadowContainer extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry margin;
   final EdgeInsetsGeometry padding;
-  const ShadowContainer({this.child, this.margin, this.padding});
+  const ShadowContainer({
+    this.child,
+    this.margin,
+    this.padding = AppStyles.spacingNormal,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class ShadowContainer extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: AppStyles.borderRadius15,
+        borderRadius: AppStyles.borderRadius10,
         boxShadow: [AppStyles.shadowBoxDecoration],
       ),
       child: child,
