@@ -1,5 +1,7 @@
+import 'package:clubbers/app/shared/components/SVGIcon.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 /*
   FORM INPUT COMPONENT
@@ -24,6 +26,7 @@ class FormInput extends StatefulWidget {
   final TextInputAction textInputAction;
   final bool obscureText;
   final Function onChanged;
+  final IconData icon;
 
   const FormInput({
     this.fieldName,
@@ -31,6 +34,7 @@ class FormInput extends StatefulWidget {
     this.obscureText = false,
     this.onChanged,
     this.textInputAction,
+    this.icon,
   });
 
   @override
@@ -59,12 +63,29 @@ class _FormInputState extends State<FormInput> {
       child: Stack(
         children: [
           fieldShape(),
+          fieldIcon(focusNode, widget),
           customInputLabel(textFieldController, focusNode, widget),
           customTextField(textFieldController, focusNode, widget),
         ],
       ),
     );
   }
+}
+
+Widget fieldIcon(focusNode, widget) {
+  return widget.icon != null
+      ? Positioned(
+          top: AppStyles.spacing_normal,
+          right: AppStyles.spacing_normal,
+          child: Icon(
+            widget.icon,
+            size: 20,
+            color: focusNode.hasFocus
+                ? AppStyles.primaryColor
+                : AppStyles.bodyColor.withOpacity(0.7),
+          ),
+        )
+      : SizedBox();
 }
 
 /*
@@ -80,7 +101,7 @@ Widget customInputLabel(textFieldController, focusNode, widget) {
     padding: EdgeInsets.only(
         // If the input is on focus or have a value
         // we animate the label up
-        top: focusNode.hasFocus || !hasText ? 5.0 : 15.0,
+        top: focusNode.hasFocus || !hasText ? 5.0 : 18.0,
         left: AppStyles.spacing_normal),
     duration: Duration(milliseconds: 200),
     child: AnimatedDefaultTextStyle(
