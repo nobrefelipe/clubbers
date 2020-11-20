@@ -33,7 +33,7 @@ class AspectRatioImage extends StatelessWidget {
         ],
       ),
       child: ClipRRect(
-        borderRadius: AppStyles.borderRadius15,
+        borderRadius: AppStyles.borderRadius10,
         child: AspectRatio(
           aspectRatio: ratio,
           child: CachedNetworkImage(
