@@ -57,6 +57,13 @@ class _FormInputState extends State<FormInput> {
   }
 
   @override
+  void dispose() {
+    textFieldController.dispose();
+    focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: AppStyles.spacing_normal),
