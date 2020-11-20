@@ -62,14 +62,15 @@ class TEXT extends StatelessWidget {
   final bool isPrimary;
   final bool noMargin;
   final double size;
+  final TextAlign textAlign;
 
-  const TEXT({
-    this.text,
-    this.weight,
-    this.isPrimary: false,
-    this.noMargin = false,
-    this.size = 14,
-  });
+  const TEXT(
+      {this.text,
+      this.weight,
+      this.isPrimary: false,
+      this.noMargin = false,
+      this.size = 14,
+      this.textAlign = TextAlign.left});
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +78,7 @@ class TEXT extends StatelessWidget {
       padding: EdgeInsets.only(bottom: !noMargin ? 8.0 : 0.0),
       child: Text(
         text,
+        textAlign: textAlign,
         style: GoogleFonts.openSans(
           fontWeight: weight,
           fontSize: size,
