@@ -26,48 +26,51 @@ class Time extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DateFormat timeFormatter = DateFormat('d:m');
+    final DateFormat timeFormatter = DateFormat('H:mm');
     final String time = timeFormatter.format(date);
 
-    return Row(
-      children: [
-        /** 
-         * CLOCK ICON  
-         */
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(
-              Radius.circular(10.0),
-            ),
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 4,
-                color: AppStyles.bodyColor.withOpacity(0.3),
+    return Container(
+      constraints: BoxConstraints(maxWidth: 60),
+      child: Row(
+        children: [
+          /** 
+           * CLOCK ICON  
+           */
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(10.0),
               ),
-            ],
-          ),
-          child: SVGIcon(
-            icon: 'clock',
-            color: AppStyles.primaryColor,
-            scale: 0.8,
-          ),
-        ),
-        /** 
-         * TIME  
-         */
-        Padding(
-          padding: const EdgeInsets.only(left: 4.0, bottom: 1.0),
-          child: Text(
-            time,
-            style: GoogleFonts.comfortaa(
-              fontWeight: FontWeight.bold,
-              fontSize: 12,
-              color: AppStyles.bodyColor,
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 4,
+                  color: AppStyles.bodyColor.withOpacity(0.3),
+                ),
+              ],
+            ),
+            child: SVGIcon(
+              icon: 'clock',
+              color: AppStyles.primaryColor,
+              scale: 0.7,
             ),
           ),
-        )
-      ],
+          /** 
+           * TIME  
+           */
+          Padding(
+            padding: const EdgeInsets.only(left: 4.0, bottom: 1.0),
+            child: Text(
+              time,
+              style: GoogleFonts.comfortaa(
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+                color: AppStyles.bodyColor,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
