@@ -58,11 +58,11 @@ class FavoritePlace extends StatelessWidget {
 Widget favoritePlaceImage(image, itemSize) {
   return Positioned(
     right: 0,
-    top: 20,
+    top: 0,
     child: Container(
-      width: itemSize - 15,
+      width: itemSize - 25,
       child: AspectRatioImage(
-        ratio: itemSize / itemSize * 1.25,
+        ratio: itemSize / itemSize * 1.20,
         image: image,
       ),
     ),
@@ -74,7 +74,7 @@ Widget favoritePlaceImage(image, itemSize) {
 */
 Widget favoritePlaceContent(localName, localAddress, itemSize) {
   return Positioned(
-    bottom: 20,
+    bottom: 0,
     child: Container(
       width: itemSize - 10,
       height: 180,
@@ -110,7 +110,7 @@ Widget favoritePlaceContent(localName, localAddress, itemSize) {
 */
 Widget moreIcon() {
   return Positioned(
-    bottom: 32,
+    bottom: 12,
     right: 22,
     child: Transform.rotate(
       angle: 1.6,
