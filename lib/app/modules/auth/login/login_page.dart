@@ -135,7 +135,10 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                   //
                   GestureDetector(
                     onTap: () => Modular.to.pop(),
-                    child: Text('Voltar'),
+                    child: Container(
+                        padding: EdgeInsets.all(20),
+                        color: Colors.transparent,
+                        child: Text('Voltar')),
                   ),
                   //
                   // Login button

@@ -122,7 +122,10 @@ class _CityPageState extends ModularState<CityPage, SignupController> {
                     //
                     GestureDetector(
                       onTap: () => Modular.to.pop(),
-                      child: Text('Voltar'),
+                      child: Container(
+                          padding: EdgeInsets.all(20),
+                          color: Colors.transparent,
+                          child: Text('Voltar')),
                     ),
                     //
                     //  Next step

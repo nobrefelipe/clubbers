@@ -136,7 +136,10 @@ class _PreferencesPageState
                     //
                     GestureDetector(
                       onTap: () => Modular.to.pop(),
-                      child: Text('Voltar'),
+                      child: Container(
+                          padding: EdgeInsets.all(20),
+                          color: Colors.transparent,
+                          child: Text('Voltar')),
                     ),
                     //
                     //  Next step
