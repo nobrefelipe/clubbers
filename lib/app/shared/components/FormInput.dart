@@ -26,6 +26,7 @@ class FormInput extends StatefulWidget {
   final TextInputAction textInputAction;
   final bool obscureText;
   final Function onChanged;
+  final Function onSubmitted;
   final IconData icon;
 
   const FormInput({
@@ -33,6 +34,7 @@ class FormInput extends StatefulWidget {
     this.keyboardType,
     this.obscureText = false,
     this.onChanged,
+    this.onSubmitted,
     this.textInputAction,
     this.icon,
   });
@@ -140,6 +142,7 @@ TextField customTextField(textFieldController, focusNode, widget) {
   return TextField(
     focusNode: focusNode,
     onChanged: widget.onChanged,
+    onSubmitted: widget.onSubmitted,
     keyboardType: widget.keyboardType,
     textInputAction: widget.textInputAction,
     obscureText: widget.obscureText,

@@ -106,15 +106,14 @@ class _OnBoardingPageState
                                     color: Colors.black, fontSize: 14),
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: ' Registre-se ',
+                                    text: ' Cadastre-se ',
                                     style: TextStyle(
                                       color: Colors.blueAccent,
                                       fontSize: 14,
                                     ),
                                     recognizer: TapGestureRecognizer()
-                                      ..onTap = () {
-                                        print("Registre-se");
-                                      },
+                                      ..onTap =
+                                          () => Modular.to.pushNamed('/signup'),
                                   ),
                                 ],
                               ),

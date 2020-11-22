@@ -3,17 +3,14 @@ import 'package:clubbers/app/shared/components/FormInput.dart';
 import 'package:clubbers/app/shared/components/ShadowContainer.dart';
 import 'package:clubbers/app/shared/components/logo.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
-import 'package:clubbers/app/shared/styles/typography.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
-  final String title;
-  const LoginPage({Key key, this.title = "Login"}) : super(key: key);
-
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -24,6 +21,9 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //
+      // Appbar
+      //
       appBar: AppBar(
         elevation: 0,
         title: Logo(),
@@ -37,6 +37,9 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
           onPressed: () => Modular.to.pop(),
         ),
       ),
+      //
+      // Body
+      //
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,9 +47,15 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
             //
             // Page Title
             //
-            HeadingComfortaa(
-              text: "Entrar com email",
-              isPrimary: false,
+            Text(
+              "Entrar com email",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.comfortaa(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                color: AppStyles.primaryColor,
+                letterSpacing: -0.8,
+              ),
             ),
             SizedBox(height: 20),
             //
@@ -66,14 +75,20 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                 child: Column(
                   children: [
                     SizedBox(height: 20),
+                    //
+                    // Email
+                    //
                     FormInput(
                       fieldName: "Email",
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.emailAddress,
                       onChanged: (value) => controller.getEmail(value),
                     ),
+                    //
+                    // Password
+                    //
                     FormInput(
-                      fieldName: "Password",
+                      fieldName: "Senha",
                       textInputAction: TextInputAction.go,
                       keyboardType: TextInputType.text,
                       obscureText: true,
@@ -90,15 +105,14 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
                             style: TextStyle(color: Colors.black, fontSize: 14),
                             children: <TextSpan>[
                               TextSpan(
-                                text: ' Registre-se ',
+                                text: ' Cadastre-se ',
                                 style: TextStyle(
                                   color: Colors.blueAccent,
                                   fontSize: 14,
                                 ),
                                 recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    print("Registre-se");
-                                  },
+                                  ..onTap =
+                                      () => Modular.to.pushNamed('/signup'),
                               ),
                             ],
                           ),
@@ -116,10 +130,16 @@ class _LoginPageState extends ModularState<LoginPage, LoginController> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //
+                  // Back
+                  //
                   GestureDetector(
                     onTap: () => Modular.to.pop(),
                     child: Text('Voltar'),
                   ),
+                  //
+                  // Login button
+                  //
                   BUTTON(
                     text: "Login",
                     width: 200,

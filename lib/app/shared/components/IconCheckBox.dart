@@ -22,10 +22,10 @@ import 'package:google_fonts/google_fonts.dart';
 */
 
 class IconCheckBox extends StatefulWidget {
-  final String title;
+  final String name;
   final Function onTap;
 
-  const IconCheckBox({this.title, this.onTap});
+  const IconCheckBox({this.name, this.onTap});
 
   @override
   _IconCheckBoxState createState() => _IconCheckBoxState();
@@ -38,9 +38,7 @@ class _IconCheckBoxState extends State<IconCheckBox> {
     setState(() {
       selected = !selected;
     });
-    widget.onTap({
-      widget.title: selected,
-    });
+    widget.onTap(selected);
   }
 
   @override
@@ -63,12 +61,12 @@ class _IconCheckBoxState extends State<IconCheckBox> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SVGIcon(
-              icon: widget.title,
+              icon: widget.name,
               scale: 1,
               color: selected ? Colors.white : AppStyles.primaryColor,
             ),
             Text(
-              widget.title.toUpperCase(),
+              widget.name.toUpperCase(),
               style: GoogleFonts.openSans(
                 fontWeight: FontWeight.bold,
                 fontSize: 10,

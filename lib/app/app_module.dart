@@ -6,6 +6,7 @@ import 'package:clubbers/app/app_widget.dart';
 
 import 'modules/auth/login/login_module.dart';
 import 'modules/auth/on_boarding/on_boarding_module.dart';
+import 'modules/auth/signup/signup_module.dart';
 
 class AppModule extends MainModule {
   @override
@@ -26,6 +27,10 @@ class AppModule extends MainModule {
         ModularRouter(
           '/login',
           module: LoginModule(),
+        ),
+        ModularRouter(
+          '/signup',
+          module: SignupModule(),
         ),
         ModularRouter(
           '/home',
