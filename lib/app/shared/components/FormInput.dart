@@ -142,7 +142,9 @@ TextField customTextField(textFieldController, focusNode, widget) {
     onChanged: widget.onChanged,
     keyboardType: widget.keyboardType,
     textInputAction: widget.textInputAction,
+    obscureText: widget.obscureText,
     controller: textFieldController,
+    enableSuggestions: false,
     decoration: InputDecoration(
       fillColor: Color(0xFFF4F9FE),
       contentPadding: const EdgeInsets.only(top: 45.0, left: 16.0),

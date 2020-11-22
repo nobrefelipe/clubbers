@@ -7,6 +7,7 @@ class AppStyles {
   static const Color primaryColor = Color.fromRGBO(252, 18, 103, 1);
   static const Color secondaryColor = Color.fromRGBO(187, 107, 217, 1);
   static const Color bodyColor = Color.fromRGBO(46, 58, 89, 1);
+  static const Color bgColor = Color(0xFFF5F8FD);
   static const Gradient primaryGradient =
       LinearGradient(colors: [secondaryColor, primaryColor]);
 

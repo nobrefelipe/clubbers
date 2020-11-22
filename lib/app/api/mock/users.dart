@@ -1,7 +1,7 @@
 import '../models/models.dart';
 import 'locals.dart';
 
-final User currentUser = users.first;
+final User currentUser = null;
 
 final List<User> users = [
   User(

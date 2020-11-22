@@ -56,6 +56,59 @@ class Heading extends StatelessWidget {
   }
 }
 
+class HeadingComfortaa extends StatelessWidget {
+  final String text;
+  final FontWeight weight;
+  final bool isPrimary;
+  final int heading;
+  final double lineheight;
+
+  const HeadingComfortaa({
+    this.text,
+    this.weight,
+    this.isPrimary: true,
+    this.heading,
+    this.lineheight = 1,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    var fontSize = 18.0;
+
+    switch (heading) {
+      case 1:
+        fontSize = 34.0;
+        break;
+      case 2:
+        fontSize = 30.0;
+        break;
+      case 3:
+        fontSize = 28.0;
+        break;
+      case 4:
+        fontSize = 26.0;
+        break;
+      case 5:
+        fontSize = 22.0;
+        break;
+      case 6:
+        fontSize = 20.0;
+        break;
+    }
+
+    return Text(
+      text,
+      style: GoogleFonts.comfortaa(
+        fontWeight: weight,
+        fontSize: fontSize,
+        color: isPrimary ? AppStyles.primaryColor : AppStyles.bodyColor,
+        letterSpacing: -0.8,
+        height: lineheight,
+      ),
+    );
+  }
+}
+
 class TEXT extends StatelessWidget {
   final String text;
   final FontWeight weight;

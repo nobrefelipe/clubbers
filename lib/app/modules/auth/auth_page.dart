@@ -22,7 +22,8 @@ class _AuthPageState extends ModularState<AuthPage, AuthController> {
     // If not logged in
     if (!isLoggedIn) {
       // Navigate to login
-      Modular.to.pushNamedAndRemoveUntil('/login', (Route route) => false);
+      Modular.to
+          .pushNamedAndRemoveUntil('/on-boarding', (Route route) => false);
     } else {
       // Navigate to home
       Modular.to.pushNamedAndRemoveUntil('/home', (Route route) => false);

@@ -24,7 +24,7 @@ vars:
     runner: flutter pub run build_runner
 scripts: 
     mobx_build: $runner build
-    mobx_watch: $clean & $get & $runner watch
+    mobx_watch: $clean & $get & $runner watch --delete-conflicting-outputs
     mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
 
 
@@ -33,6 +33,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  dotted_line: ^2.0.2
   cached_network_image: ^2.3.3
   google_fonts: ^1.1.1
   flutter_icons:

@@ -20,7 +20,7 @@ abstract class _AuthControllerBase with Store {
   //
   @action
   Future<bool> checkLogin() {
-    return Future.delayed(Duration(seconds: 2), () {
+    return Future.delayed(Duration(seconds: 1), () {
       return currentUser != null;
     });
   }

@@ -13,11 +13,21 @@ class AppWidget extends StatelessWidget {
       DeviceOrientation.portraitUp,
     ]);
 
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.blue, // navigation bar color
+      statusBarColor: Colors.pink, // status bar color
+    ));
+
     return MaterialApp(
       navigatorKey: Modular.navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'Clubbers',
       theme: ThemeData(
+        scaffoldBackgroundColor: AppStyles.bgColor,
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.light,
+          color: AppStyles.bgColor,
+        ),
         primaryColor: AppStyles.primaryColor,
       ),
       initialRoute: '/auth',
