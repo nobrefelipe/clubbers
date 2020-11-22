@@ -30,7 +30,7 @@ class BUTTON extends StatelessWidget {
   final String text;
   final Function onPressed;
   final bool primary;
-  final IconData icon;
+  final icon;
   final double width;
   final Color backgroundColor;
   final Color textColor;
