@@ -19,27 +19,38 @@ class UserActivity extends StatelessWidget {
   final String avatar;
   final String name;
   final String status;
+  final bool hasBorder;
 
-  const UserActivity({this.avatar, this.name, this.status});
+  const UserActivity({
+    this.avatar,
+    this.name,
+    this.status,
+    this.hasBorder = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ProfileAvatar(
             image: avatar,
+            hasBorder: hasBorder,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                name,
-                style: GoogleFonts.comfortaa(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14.0,
-                  color: AppStyles.bodyColor,
+              Container(
+                width: 125,
+                child: Text(
+                  name,
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.comfortaa(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.0,
+                    color: AppStyles.bodyColor,
+                  ),
                 ),
               ),
               Text(
