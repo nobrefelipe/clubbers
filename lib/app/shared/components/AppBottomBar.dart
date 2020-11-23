@@ -5,44 +5,55 @@ import 'package:flutter/material.dart';
   BOTTOM NAVIGATION 
 */
 class AppBottomBar extends StatelessWidget {
+  final PageController controller;
+
+  const AppBottomBar(this.controller);
   @override
   Widget build(BuildContext context) {
-    return BottomAppBar(
-      color: Color(0xFFEFF5FF),
-      elevation: 25,
-      child: new Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          SizedBox(width: 0),
-          IconButton(
-            icon: SVGIcon(
-              icon: 'home',
-              active: true,
+    var selectedItem = 0;
+    return AnimatedBuilder(
+      animation: controller,
+      builder: (context, snapshot) {
+        return BottomNavigationBar(
+          currentIndex: controller?.page?.round() ?? 0,
+          onTap: (index) {
+            selectedItem = index;
+            controller.jumpToPage(index);
+          },
+          showSelectedLabels: false,
+          elevation: 25,
+          items: [
+            BottomNavigationBarItem(
+              label: "home",
+              icon: SVGIcon(
+                icon: 'home',
+                active: selectedItem == 0,
+              ),
             ),
-            onPressed: () => {},
-          ),
-          IconButton(
-            icon: SVGIcon(
-              icon: 'location',
+            BottomNavigationBarItem(
+              label: "map",
+              icon: SVGIcon(
+                icon: 'location',
+                active: selectedItem == 1,
+              ),
             ),
-            onPressed: () => {},
-          ),
-          IconButton(
-            icon: SVGIcon(
-              icon: 'tag',
+            BottomNavigationBarItem(
+              label: "events",
+              icon: SVGIcon(
+                icon: 'tag',
+                active: selectedItem == 2,
+              ),
             ),
-            onPressed: () => {},
-          ),
-          IconButton(
-            icon: SVGIcon(
-              icon: 'profile',
+            BottomNavigationBarItem(
+              label: "profile",
+              icon: SVGIcon(
+                icon: 'profile',
+                active: selectedItem == 3,
+              ),
             ),
-            onPressed: () => {},
-          ),
-          SizedBox(width: 0),
-        ],
-      ),
+          ],
+        );
+      },
     );
   }
 }
