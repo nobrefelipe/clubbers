@@ -1,5 +1,6 @@
 import 'package:clubbers/app/shared/components/AspectRatioImage.dart';
 import 'package:clubbers/app/shared/components/ShadowContainer.dart';
+import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:clubbers/app/shared/styles/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -61,6 +62,9 @@ Widget favoritePlaceImage(image, itemSize) {
     top: 0,
     child: Container(
       width: itemSize - 25,
+      decoration: BoxDecoration(
+        boxShadow: [AppStyles.shadowBoxDecorationIntense],
+      ),
       child: AspectRatioImage(
         ratio: itemSize / itemSize * 1.20,
         image: image,
