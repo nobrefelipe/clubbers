@@ -157,15 +157,20 @@ class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
                         //
                         //  Next step
                         //
-                        // aqui precisa do build block pra escurar mudancas no contorller
-                        // quando clicar em finalizar tavez mostrar uma modal com um bom feedback
-                        // quando terminar de criar o usuario a modal continua com umamesnsagem de bem vindo
-                        // personalizada e um botao de ir acessar o app
-                        BUTTON(
-                          text: "Finalizar",
-                          width: 160,
-                          icon: AntDesign.arrowright,
-                          onPressed: () => controller.signup(context),
+                        Opacity(
+                          opacity: (controller.fullName == '' ||
+                                  controller.fullName == null)
+                              ? 0.4
+                              : 1.0,
+                          child: BUTTON(
+                            text: "Finalizar",
+                            width: 160,
+                            icon: AntDesign.arrowright,
+                            onPressed: () => (controller.fullName == '' ||
+                                    controller.fullName == null)
+                                ? null
+                                : controller.signup(context),
+                          ),
                         ),
                       ],
                     ),
