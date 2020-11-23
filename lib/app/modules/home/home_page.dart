@@ -1,6 +1,5 @@
 import 'package:clubbers/app/api/mock/locals.dart';
 import 'package:clubbers/app/api/mock/users.dart';
-import 'package:clubbers/app/shared/components/AppBottomBar.dart';
 import 'package:clubbers/app/shared/components/FavoritePlaces.dart';
 import 'package:clubbers/app/shared/components/UsersCheckedIn.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
@@ -23,7 +22,6 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: AppBottomBar(),
       body: CustomScrollView(
         slivers: [
           //
