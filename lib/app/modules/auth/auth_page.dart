@@ -26,7 +26,7 @@ class _AuthPageState extends ModularState<AuthPage, AuthController> {
           .pushNamedAndRemoveUntil('/on-boarding', (Route route) => false);
     } else {
       // Navigate to home
-      Modular.to.pushNamedAndRemoveUntil('/home', (Route route) => false);
+      Modular.to.pushNamedAndRemoveUntil('/start', (Route route) => false);
     }
   }
 

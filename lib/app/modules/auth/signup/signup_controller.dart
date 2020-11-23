@@ -129,7 +129,7 @@ abstract class _SignupControllerBase with Store {
       //
       if (currentUser != null)
         Modular.to.pushNamedAndRemoveUntil(
-          '/home',
+          '/start',
           (Route route) => false,
         );
     });

@@ -1,5 +1,4 @@
 import 'package:clubbers/app/modules/auth/auth_module.dart';
-import 'package:clubbers/app/modules/home/home_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
 import 'package:clubbers/app/app_widget.dart';
@@ -7,6 +6,7 @@ import 'package:clubbers/app/app_widget.dart';
 import 'modules/auth/login/login_module.dart';
 import 'modules/auth/on_boarding/on_boarding_module.dart';
 import 'modules/auth/signup/signup_module.dart';
+import 'modules/start/start_module.dart';
 
 class AppModule extends MainModule {
   @override
@@ -33,8 +33,8 @@ class AppModule extends MainModule {
           module: SignupModule(),
         ),
         ModularRouter(
-          '/home',
-          module: HomeModule(),
+          '/start',
+          module: StartModule(),
           transition: TransitionType.fadeIn,
         ),
       ];
