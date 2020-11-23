@@ -22,19 +22,22 @@ class ProfileAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CircleAvatar(
-          radius: 20.0,
-          backgroundColor: AppStyles.primaryColor,
-          child: CircleAvatar(
-            radius: hasBorder ? 19.0 : 20.0,
-            backgroundColor: Colors.grey[200],
-            backgroundImage: CachedNetworkImageProvider(image),
+    return Container(
+      width: 50,
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 20.0,
+            backgroundColor: AppStyles.primaryColor,
+            child: CircleAvatar(
+              radius: hasBorder ? 18.5 : 20.0,
+              backgroundColor: Colors.grey[200],
+              backgroundImage: CachedNetworkImageProvider(image),
+            ),
           ),
-        ),
-        VerticalDivider(width: 5),
-      ],
+          SizedBox(width: 8),
+        ],
+      ),
     );
   }
 }
