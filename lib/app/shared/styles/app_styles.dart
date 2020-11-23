@@ -56,6 +56,13 @@ class AppStyles {
     offset: Offset(0, 0),
   );
 
+  static BoxShadow shadowBoxDecorationIntense = BoxShadow(
+    color: Colors.black.withOpacity(0.4),
+    spreadRadius: 0,
+    blurRadius: 20,
+    offset: Offset(-10, 10),
+  );
+
   static BoxShadow shadowBoxDecorationForButtons = BoxShadow(
     color: Colors.grey.withOpacity(0.8),
     spreadRadius: 0,
