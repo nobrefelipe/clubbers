@@ -14,7 +14,7 @@ class UsersCheckedIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 60,
+      height: 50,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: users.length,
@@ -23,7 +23,7 @@ class UsersCheckedIn extends StatelessWidget {
           final User user = users[index];
           return Container(
             child: ShadowContainer(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(4.0),
               margin: EdgeInsets.only(right: AppStyles.spacing_normal),
               child: UserActivity(
                 avatar: user.profilePicture,
