@@ -1,4 +1,5 @@
 import 'package:clubbers/app/api/mock/users.dart';
+import 'package:clubbers/app/api/models/user_model.dart';
 import 'package:clubbers/app/shared/components/Modal.dart';
 import 'package:clubbers/app/shared/components/Spinner.dart';
 import 'package:clubbers/app/shared/styles/typography.dart';
@@ -22,7 +23,6 @@ abstract class _SignupControllerBase with Store {
   @action
   void getName(value) {
     fullName = value;
-    print(email);
   }
 
   //
@@ -104,11 +104,29 @@ abstract class _SignupControllerBase with Store {
     //
     // CREATE THE USER
     //
-    Future.delayed(Duration(seconds: 5), () {
-      // Create the user
-      currentUser = users.first;
 
+    // Mock new user
+    final newUser = User(
+      fullName: fullName,
+      email: email,
+      password: password,
+      placesPreference: preferences,
+      defaultLocation: city,
+      profilePicture:
+          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+    );
+
+    Future.delayed(Duration(seconds: 5), () {
+      //
+      // Create the user
+      //
+      users.add(newUser);
+      currentUser = newUser;
+      print(currentUser);
+
+      //
       // If we got a user, navigate to the home page
+      //
       if (currentUser != null)
         Modular.to.pushNamedAndRemoveUntil(
           '/home',

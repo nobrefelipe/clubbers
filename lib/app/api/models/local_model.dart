@@ -2,12 +2,6 @@ import 'package:meta/meta.dart';
 import 'event_model.dart';
 import 'post_model.dart';
 
-enum place_types {
-  balada, // club
-  barzinho, // pub
-  restaurante, // restaurant
-}
-
 class Local {
   final String id;
   final String name;
@@ -19,7 +13,7 @@ class Local {
   final String phone;
   final String description;
   final List<Event> events;
-  final List<place_types> type;
+  final List<String> type;
 
   const Local({
     this.posts,

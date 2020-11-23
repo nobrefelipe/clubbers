@@ -1,7 +1,7 @@
 import '../models/models.dart';
 import 'locals.dart';
 
-final User currentUser = null;
+User currentUser = users.first;
 
 final List<User> users = [
   User(
@@ -14,8 +14,8 @@ final List<User> users = [
     gender: "Masculino",
     followersAggregate: "332",
     placesPreference: [
-      place_types.balada,
-      place_types.barzinho,
+      'baladas',
+      'barzinhos',
     ],
     profilePicture:
         'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
@@ -30,8 +30,8 @@ final List<User> users = [
     gender: "Feminino",
     followersAggregate: "4123",
     placesPreference: [
-      place_types.balada,
-      place_types.barzinho,
+      'baladas'
+          'barzinhos'
     ],
     profilePicture:
         'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
@@ -45,11 +45,7 @@ final List<User> users = [
     favoriteMusicStyle: "Sertanejo",
     gender: "Masculino",
     followersAggregate: "163",
-    placesPreference: [
-      place_types.balada,
-      place_types.barzinho,
-      place_types.restaurante
-    ],
+    placesPreference: ['restaurantes'],
     profilePicture:
         'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1331&q=80',
   ),
@@ -153,4 +149,37 @@ final List<User> users = [
   //   profilePicture:
   //       'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
   // ),
+];
+
+final List<User> checkedInUsers = [
+  User(
+    fullName: 'James Lathrop',
+    checkedInPlace: 'psy beach club',
+    profilePicture:
+        'https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=675&q=80',
+  ),
+  User(
+    fullName: 'Felipe Nobre Ferreira',
+    checkedInPlace: 'psy beach club',
+    profilePicture:
+        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+  ),
+  User(
+    fullName: 'Natalia Colognesi Scliped',
+    checkedInPlace: 'psy beach club',
+    profilePicture:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+  ),
+  User(
+    fullName: 'Matthew Hinkle',
+    checkedInPlace: 'psy beach club',
+    profilePicture:
+        'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1331&q=80',
+  ),
+  User(
+    fullName: 'Jessie Samson',
+    checkedInPlace: 'psy beach club',
+    profilePicture:
+        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+  ),
 ];

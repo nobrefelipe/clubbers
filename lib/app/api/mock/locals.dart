@@ -9,7 +9,7 @@ final List<Local> locals = [
     email: "contato@psybeachclub.com.br",
     address: "Avenida Beira-mar da Praia, 46 - Vitoria",
     followers: ['1', "2", "3"],
-    type: [place_types.balada],
+    type: ['barzinhos'],
     events: [
       events[0],
       events[1],
@@ -24,7 +24,7 @@ final List<Local> locals = [
     email: "contato@alcatraz.com.br",
     address: "Avenida das Ondas grandes, 231 - Guarapari",
     followers: ['1', "2", "3"],
-    type: [place_types.balada],
+    type: ['baladas'],
     events: [],
     profilePicture:
         'https://images.unsplash.com/photo-1575535468632-345892291673?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
@@ -36,7 +36,7 @@ final List<Local> locals = [
     email: "contato@multiplacemais.com.br",
     address: "Rua Onda, 31 - Guarapari",
     followers: ['1', "2", "3"],
-    type: [place_types.balada, place_types.barzinho],
+    type: ['barzinhos', 'baladas'],
     events: [],
     profilePicture:
         'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
@@ -48,7 +48,7 @@ final List<Local> locals = [
     email: "contato@caffe.com.br",
     address: "Av. Praia Grande, 346 - Vitoria",
     followers: ["2", "3"],
-    type: [place_types.balada, place_types.barzinho],
+    type: ['barzinhos', 'baladas'],
     events: [],
     profilePicture:
         'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=592&q=80',
@@ -60,7 +60,55 @@ final List<Local> locals = [
     email: "contato@pedreiraguarapari.com.br",
     address: "Rua. Mestre da Praia Grande, 9 - Guarapari",
     followers: ["1", "2", "3"],
-    type: [place_types.balada, place_types.barzinho],
+    type: ['barzinhos'],
+    events: [],
+    profilePicture:
+        'https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=675&q=80',
+  ),
+  Local(
+    id: "6",
+    name: 'Bar do Pezao',
+    phone: "27 99948833",
+    email: "contato@pedreiraguarapari.com.br",
+    address: "Rua. Mestre da Praia Grande, 9 - Guarapari",
+    followers: ["1", "2", "3"],
+    type: ['barzinhos'],
+    events: [],
+    profilePicture:
+        'https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=675&q=80',
+  ),
+  Local(
+    id: "7",
+    name: 'Fratelli Reggiani Cervejaria',
+    phone: "27 99948833",
+    email: "contato@pedreiraguarapari.com.br",
+    address: "Rua. Mestre da Praia Grande, 9 - Guarapari",
+    followers: ["1", "2", "3"],
+    type: ['barzinhos'],
+    events: [],
+    profilePicture:
+        'https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=675&q=80',
+  ),
+  Local(
+    id: "8",
+    name: 'Fratelli Reggiani Cervejaria',
+    phone: "27 99948833",
+    email: "contato@pedreiraguarapari.com.br",
+    address: "Rua. Mestre da Praia Grande, 9 - Guarapari",
+    followers: ["1", "2", "3"],
+    type: ['barzinhos'],
+    events: [],
+    profilePicture:
+        'https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=675&q=80',
+  ),
+  Local(
+    id: "9",
+    name: 'Barzinho Social',
+    phone: "27 99948833",
+    email: "contato@pedreiraguarapari.com.br",
+    address: "Rua. Mestre da Praia Grande, 9 - Guarapari",
+    followers: ["1", "2", "3"],
+    type: ['barzinhos'],
     events: [],
     profilePicture:
         'https://images.unsplash.com/photo-1515077678510-ce3bdf418862?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=675&q=80',

@@ -15,8 +15,9 @@ class User {
   final String gender;
   final bool isOnline;
   final Local mostFavoritePlace;
-  final List<place_types> placesPreference;
+  final List<dynamic> placesPreference;
   final String password;
+  final String checkedInPlace;
 
   const User({
     this.posts,
@@ -31,6 +32,7 @@ class User {
     this.placesPreference,
     this.email,
     this.password,
+    this.checkedInPlace,
     @required this.fullName,
     @required this.profilePicture,
   });
