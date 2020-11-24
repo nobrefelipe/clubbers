@@ -597,6 +597,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0-nullsafety.1"
+  sticky_infinite_list:
+    dependency: "direct main"
+    description:
+      name: sticky_infinite_list
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   stream_channel:
     dependency: transitive
     description:

@@ -33,6 +33,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  sticky_infinite_list: ^3.0.1
   dotted_line: ^2.0.2
   cached_network_image: ^2.3.3
   google_fonts: ^1.1.1
