@@ -1,3 +1,4 @@
+import 'package:clubbers/app/modules/events/events_module.dart';
 import 'package:clubbers/app/modules/home/home_module.dart';
 import 'package:clubbers/app/shared/components/AppBottomBar.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,10 @@ class _StartPageState extends ModularState<StartPage, StartController> {
           //
           // Events Module
           //
-          Container(),
+          RouterOutlet(
+            initialRoute: '/events',
+            module: EventsModule(),
+          ),
           //
           // Profile Module
           //
