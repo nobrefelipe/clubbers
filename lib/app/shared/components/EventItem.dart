@@ -44,7 +44,7 @@ class EventItem extends StatelessWidget {
               flex: 1,
               child: Container(
                 child: Stack(
-                  alignment: Alignment(-0.5, -0.2),
+                  alignment: Alignment(-0.3, -0.2),
                   children: [
                     /*
                       Dotted Line
@@ -64,7 +64,7 @@ class EventItem extends StatelessWidget {
                       Event time
                      */
                     Padding(
-                      padding: const EdgeInsets.only(left: 15),
+                      padding: const EdgeInsets.only(left: 25),
                       child: Time(
                         date: eventDate,
                       ),
@@ -78,7 +78,7 @@ class EventItem extends StatelessWidget {
               Event banner
             */
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Container(
                 child: AspectRatioImage(
                   image: eventImage,
