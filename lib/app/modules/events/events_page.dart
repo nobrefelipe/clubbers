@@ -119,7 +119,8 @@ class _EventsPageState extends ModularState<EventsPage, EventsController> {
                         children: [
                           for (var event in eventItems[index])
                             EventItem(
-                              onTap: () => print(event.name),
+                              onTap: () =>
+                                  Modular.to.pushNamed('/event/${event.id}'),
                               eventDate: DateTime.parse(event.date),
                               eventImage: event.banner,
                             ),

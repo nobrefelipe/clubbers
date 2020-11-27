@@ -49,7 +49,7 @@ class Heading extends StatelessWidget {
         fontWeight: weight,
         fontSize: fontSize,
         color: isPrimary ? AppStyles.primaryColor : AppStyles.bodyColor,
-        letterSpacing: -0.8,
+        letterSpacing: -0.4,
         height: lineheight,
       ),
     );

@@ -15,7 +15,7 @@ class Event {
   final String banner;
   final String price;
   final List<String> artists;
-  final Local owner;
+  final Map<String, String> owner;
 
   Event({
     this.date,

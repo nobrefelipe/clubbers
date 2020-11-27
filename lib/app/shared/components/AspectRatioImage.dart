@@ -26,9 +26,9 @@ class AspectRatioImage extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(1),
-            spreadRadius: 0,
+            spreadRadius: -5,
             blurRadius: 20,
-            offset: Offset(0, 0),
+            offset: Offset(-5, 10),
           ),
         ],
       ),

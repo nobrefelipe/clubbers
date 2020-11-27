@@ -11,7 +11,7 @@ class StartModule extends ChildModule {
 
   @override
   List<ModularRouter> get routers => [
-        ModularRouter('/start', child: (_, args) => StartPage()),
+        ModularRouter(Modular.initialRoute, child: (_, args) => StartPage()),
       ];
 
   static Inject get to => Inject<StartModule>.of();

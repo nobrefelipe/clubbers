@@ -85,7 +85,7 @@ class BUTTON extends StatelessWidget {
         //
         padding: width == null ? AppStyles.spacingBig : AppStyles.spacingNormal,
         //
-        // If we dont set a width, meand we want the button to be full width
+        // If we dont set a width, means we want the button to be full width
         // thus lets set a bigger MARGIN
         //
         margin: width == null
