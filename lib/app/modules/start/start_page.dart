@@ -1,5 +1,7 @@
+import 'package:clubbers/app/app_controller.dart';
 import 'package:clubbers/app/modules/events/events_module.dart';
 import 'package:clubbers/app/modules/home/home_module.dart';
+import 'package:clubbers/app/modules/profile/profile_module.dart';
 import 'package:clubbers/app/shared/components/AppBottomBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -28,6 +30,7 @@ class StartPage extends StatefulWidget {
 
 class _StartPageState extends ModularState<StartPage, StartController> {
   final pageViewController = PageController();
+  AppController appController = Modular.get<AppController>();
 
   @override
   void dispose() {
@@ -70,7 +73,10 @@ class _StartPageState extends ModularState<StartPage, StartController> {
           //
           // Profile Module
           //
-          Container(),
+          RouterOutlet(
+            initialRoute: '/profile/${appController.currentUser.id}',
+            module: ProfileModule(),
+          ),
         ],
       ),
       bottomNavigationBar: AppBottomBar(pageViewController),

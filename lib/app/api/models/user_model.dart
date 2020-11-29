@@ -10,7 +10,7 @@ class User {
   final List<Post> posts;
   final String defaultLocation;
   final String favoriteMusicStyle;
-  final List<String> favoritePlaces;
+  final List<Local> favoritePlaces;
   final String followersAggregate;
   final String gender;
   final bool isOnline;
@@ -18,6 +18,7 @@ class User {
   final List<dynamic> placesPreference;
   final String password;
   final String checkedInPlace;
+  final List<String> gallery;
 
   const User({
     this.posts,
@@ -33,6 +34,7 @@ class User {
     this.email,
     this.password,
     this.checkedInPlace,
+    this.gallery,
     @required this.fullName,
     @required this.profilePicture,
   });
