@@ -1,4 +1,5 @@
 # clubbers
+### A social plataform for night clubbers 
 
 Working in progress....
 
