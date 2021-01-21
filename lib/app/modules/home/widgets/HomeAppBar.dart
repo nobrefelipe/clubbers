@@ -15,8 +15,7 @@ class HomeAppBar extends StatelessWidget {
       actions: [
         Container(
           margin: const EdgeInsets.all(8.0),
-          decoration:
-              BoxDecoration(color: Colors.grey[300], shape: BoxShape.circle),
+          decoration: BoxDecoration(color: Colors.grey[300], shape: BoxShape.circle),
           child: IconButton(
             icon: Icon(
               Ionicons.ios_search,

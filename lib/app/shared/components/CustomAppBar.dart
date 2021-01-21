@@ -2,7 +2,7 @@ import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:clubbers/app/shared/styles/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String pageTitle;
@@ -37,7 +37,7 @@ class CustomAppBar extends StatelessWidget {
                   size: 32,
                   color: AppStyles.bodyColor,
                 ),
-                onPressed: () => Modular.to.pop(),
+                onPressed: () => Get.back(),
               )
             : null,
       ),

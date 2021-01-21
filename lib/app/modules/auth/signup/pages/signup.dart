@@ -5,18 +5,10 @@ import 'package:clubbers/app/shared/components/logo.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../signup_controller.dart';
 
-class SignupPage extends StatefulWidget {
-  @override
-  _SignupPageState createState() => _SignupPageState();
-}
-
-class _SignupPageState extends ModularState<SignupPage, SignupController> {
-  //use 'controller' variable to access controller
-
+class SignupPage extends GetView {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -30,13 +22,12 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
         title: Logo(),
         centerTitle: false,
         leading: IconButton(
-          icon: Icon(
-            Ionicons.ios_arrow_round_back,
-            size: 32,
-            color: AppStyles.bodyColor,
-          ),
-          onPressed: () => Modular.to.pop(),
-        ),
+            icon: Icon(
+              Ionicons.ios_arrow_round_back,
+              size: 32,
+              color: AppStyles.bodyColor,
+            ),
+            onPressed: () => Get.back()),
       ),
       //
       // Home
@@ -61,6 +52,15 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                 ),
               ),
               SizedBox(height: 20),
+
+              // GetX(
+              //   () {
+              //     return Text(
+              //       "error",
+              //       textAlign: TextAlign.center,
+              //     );
+              //   },
+              // ),
               //
               // Login Box
               //
@@ -86,7 +86,7 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                         fieldName: "Email",
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.emailAddress,
-                        onChanged: (value) => controller.getEmail(value),
+                        onChanged: (value) => print(value),
                       ),
                       //
                       // Password
@@ -96,7 +96,7 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.text,
                         obscureText: true,
-                        onChanged: (value) => controller.getPassword(value),
+                        onChanged: (value) => print(value),
                       ),
                       //
                       // Repeat Password
@@ -109,9 +109,8 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                         //
                         // On submit, lets navigate to the next route
                         //
-                        onSubmitted: (value) =>
-                            Modular.to.pushNamed('/signup/city'),
-                        onChanged: (value) => controller.getPassword(value),
+                        onSubmitted: (value) => Get.toNamed('/auth/signup/city'),
+                        onChanged: (value) => print(value),
                       ),
                       SizedBox(height: 20),
                     ],
@@ -132,11 +131,8 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                     //  Go back
                     //
                     GestureDetector(
-                      onTap: () => Modular.to.pop(),
-                      child: Container(
-                          padding: EdgeInsets.all(20),
-                          color: Colors.transparent,
-                          child: Text('Voltar')),
+                      onTap: () => Get.back(),
+                      child: Container(padding: EdgeInsets.all(20), color: Colors.transparent, child: Text('Voltar')),
                     ),
                     //
                     //  Next step
@@ -145,7 +141,7 @@ class _SignupPageState extends ModularState<SignupPage, SignupController> {
                       text: "Cidade",
                       width: 160,
                       icon: AntDesign.arrowright,
-                      onPressed: () => Modular.to.pushNamed('/signup/city'),
+                      onPressed: () => Get.toNamed('/auth/signup/city'),
                     ),
                   ],
                 ),

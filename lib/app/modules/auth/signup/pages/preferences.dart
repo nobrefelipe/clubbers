@@ -1,24 +1,14 @@
 import 'package:clubbers/app/shared/components/Button.dart';
-import 'package:clubbers/app/shared/components/FormInput.dart';
 import 'package:clubbers/app/shared/components/IconCheckBox.dart';
 import 'package:clubbers/app/shared/components/ShadowContainer.dart';
 import 'package:clubbers/app/shared/components/logo.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../signup_controller.dart';
 
-class PreferencesPage extends StatefulWidget {
-  @override
-  _PreferencesPageState createState() => _PreferencesPageState();
-}
-
-class _PreferencesPageState
-    extends ModularState<PreferencesPage, SignupController> {
-  //use 'controller' variable to access controller
-
+class SignupPreferencesPage extends GetView {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -37,7 +27,7 @@ class _PreferencesPageState
             size: 32,
             color: AppStyles.bodyColor,
           ),
-          onPressed: () => Modular.to.pop(),
+          onPressed: () => Get.back(),
         ),
       ),
       //
@@ -100,18 +90,15 @@ class _PreferencesPageState
                         children: [
                           IconCheckBox(
                             name: 'baladas',
-                            onTap: (value) =>
-                                controller.getPreferences('baladas'),
+                            onTap: (value) => print(value),
                           ),
                           IconCheckBox(
                             name: 'barzinhos',
-                            onTap: (value) =>
-                                controller.getPreferences('barzinhos'),
+                            onTap: (value) => print(value),
                           ),
                           IconCheckBox(
                             name: 'restaurantes',
-                            onTap: (value) =>
-                                controller.getPreferences('restaurantes'),
+                            onTap: (value) => print(value),
                           ),
                         ],
                       ),
@@ -135,11 +122,8 @@ class _PreferencesPageState
                     //  Go back
                     //
                     GestureDetector(
-                      onTap: () => Modular.to.pop(),
-                      child: Container(
-                          padding: EdgeInsets.all(20),
-                          color: Colors.transparent,
-                          child: Text('Voltar')),
+                      onTap: () => Get.back(),
+                      child: Container(padding: EdgeInsets.all(20), color: Colors.transparent, child: Text('Voltar')),
                     ),
                     //
                     //  Next step
@@ -148,7 +132,7 @@ class _PreferencesPageState
                       text: "Perfil",
                       width: 160,
                       icon: AntDesign.arrowright,
-                      onPressed: () => Modular.to.pushNamed('/signup/perfil'),
+                      onPressed: () => Get.toNamed('/auth/signup/profile'),
                     ),
                   ],
                 ),

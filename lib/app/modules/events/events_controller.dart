@@ -1,25 +1,19 @@
 import 'package:clubbers/app/api/mock/events.dart';
 import 'package:clubbers/app/api/models/event_model.dart';
-import 'package:mobx/mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
-part 'events_controller.g.dart';
+import 'package:get/get.dart';
 
-@Injectable()
-class EventsController = _EventsControllerBase with _$EventsController;
-
-abstract class _EventsControllerBase with Store {
-  _EventsControllerBase() {
-    // Call geEvents()
-    // in the cosntructor so we get the events when EventsHomeController is instanciated
+class EventsController extends GetxController {
+  @override
+  void onInit() {
     getEvents();
+    super.onInit();
   }
 
-  @observable
-  List<Event> allEvents;
+  List<Event> allEvents = <Event>[].obs;
 
-  @observable
-  Map<dynamic, List<Event>> eventsByDate;
+  Map<dynamic, List<Event>> _eventsByDate = <dynamic, List<Event>>{}.obs;
+  Map<dynamic, List<Event>> get eventsByDate => _eventsByDate;
 
   /*
     SORT EVENTS
@@ -31,7 +25,7 @@ abstract class _EventsControllerBase with Store {
     }
 
   */
-  @action
+
   void sortEvents(events) {
     Map<dynamic, List<Event>> finalObj = {};
 
@@ -44,10 +38,10 @@ abstract class _EventsControllerBase with Store {
       }
     });
 
-    eventsByDate = finalObj;
+    _eventsByDate = finalObj;
+    print(_eventsByDate);
   }
 
-  @action
   void getEvents() {
     //
     // TODO: Get events with repository

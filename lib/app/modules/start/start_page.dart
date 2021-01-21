@@ -1,11 +1,8 @@
-import 'package:clubbers/app/app_controller.dart';
-import 'package:clubbers/app/modules/events/events_module.dart';
-import 'package:clubbers/app/modules/home/home_module.dart';
-import 'package:clubbers/app/modules/profile/profile_module.dart';
+import 'package:clubbers/app/modules/events/events_page.dart';
+import 'package:clubbers/app/modules/home/home_page.dart';
+import 'package:clubbers/app/modules/profile/profile_page.dart';
 import 'package:clubbers/app/shared/components/AppBottomBar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'start_controller.dart';
 
 /*
   The modules is responsable for implementing the
@@ -21,16 +18,12 @@ import 'start_controller.dart';
 */
 
 class StartPage extends StatefulWidget {
-  final String title;
-  const StartPage({Key key, this.title = "Start"}) : super(key: key);
-
   @override
   _StartPageState createState() => _StartPageState();
 }
 
-class _StartPageState extends ModularState<StartPage, StartController> {
+class _StartPageState extends State<StartPage> {
   final pageViewController = PageController();
-  AppController appController = Modular.get<AppController>();
 
   @override
   void dispose() {
@@ -45,7 +38,7 @@ class _StartPageState extends ModularState<StartPage, StartController> {
         controller: pageViewController,
         physics: NeverScrollableScrollPhysics(),
         /*
-          The PageView() will have a module for each
+          The PageView() will have a page for each
           page we set on AppBottomBar();
 
           Current pages are: Home, Map, Events and Profile
@@ -55,10 +48,7 @@ class _StartPageState extends ModularState<StartPage, StartController> {
           //
           // Home Module
           //
-          RouterOutlet(
-            initialRoute: '/home',
-            module: HomeModule(),
-          ),
+          HomePage(),
           //
           // Map Module
           //
@@ -66,17 +56,12 @@ class _StartPageState extends ModularState<StartPage, StartController> {
           //
           // Events Module
           //
-          RouterOutlet(
-            initialRoute: '/events',
-            module: EventsModule(),
-          ),
+          EventsPage(),
           //
           // Profile Module
           //
-          RouterOutlet(
-            initialRoute: '/profile/${appController.currentUser.id}',
-            module: ProfileModule(),
-          ),
+
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: AppBottomBar(pageViewController),

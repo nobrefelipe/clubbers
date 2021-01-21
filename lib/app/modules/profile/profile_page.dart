@@ -1,4 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:clubbers/app/api/mock/users.dart';
+import 'package:clubbers/app/api/models/user_model.dart';
 import 'package:clubbers/app/shared/components/Button.dart';
 import 'package:clubbers/app/shared/components/DotsIndicator.dart';
 import 'package:clubbers/app/shared/components/FavoritePlaces.dart';
@@ -6,198 +8,175 @@ import 'package:clubbers/app/shared/components/RichTitle.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:clubbers/app/shared/styles/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'profile_controller.dart';
 
-class ProfilePage extends StatefulWidget {
-  final String id;
-  const ProfilePage({this.id});
-
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
-  final _galleryPageController = new PageController();
-
-  @override
-  void initState() {
-    super.initState();
-    controller.getCurrentUser(widget.id);
-  }
-
+class ProfilePage extends GetView {
   @override
   Widget build(BuildContext context) {
+    final _galleryPageController = new PageController();
+
+    User user = users[0];
+
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: Observer(
-        builder: (_) {
-          if (controller.currentUser == null)
-            return CircularProgressIndicator();
-
-          return SlidingUpPanel(
-            //
-            // Panel Settings
-            //
-            backdropEnabled: true,
-            parallaxEnabled: true,
-            parallaxOffset: 0.5,
-            minHeight: screenSize.height * 0.4,
-            maxHeight: screenSize.height * 0.8,
-            header: slidePanelHeader(screenSize),
-            //
-            // Add radius to the panel
-            //
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-            ),
-            panel: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 40,
-                    left: AppStyles.spacing_normal,
-                    right: AppStyles.spacing_normal,
-                    bottom: AppStyles.spacing_small,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+      body: SlidingUpPanel(
+        //
+        // Panel Settings
+        //
+        backdropEnabled: true,
+        parallaxEnabled: true,
+        parallaxOffset: 0.5,
+        minHeight: screenSize.height * 0.4,
+        maxHeight: screenSize.height * 0.8,
+        header: slidePanelHeader(screenSize),
+        //
+        // Add radius to the panel
+        //
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        panel: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 40,
+                left: AppStyles.spacing_normal,
+                right: AppStyles.spacing_normal,
+                bottom: AppStyles.spacing_small,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          //
-                          // User Name
-                          //
-                          Expanded(
-                            flex: 3,
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 18.0),
-                              child: Text(
-                                controller.currentUser.fullName,
-                                style: GoogleFonts.biryani(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 22,
-                                  color: AppStyles.bodyColor,
-                                  height: 1.2,
-                                  letterSpacing: -0.3,
-                                ),
-                              ),
+                      //
+                      // User Name
+                      //
+                      Expanded(
+                        flex: 3,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 18.0),
+                          child: Text(
+                            user.fullName,
+                            style: GoogleFonts.biryani(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 22,
+                              color: AppStyles.bodyColor,
+                              height: 1.2,
+                              letterSpacing: -0.3,
                             ),
                           ),
-                          //
-                          // Followers Count
-                          //
-                          Expanded(
-                            flex: 1,
-                            child: RichTitle(
-                              title: 'seguidores',
-                              value: "232",
-                              alignment: CrossAxisAlignment.center,
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                      SizedBox(height: 20),
                       //
-                      // Call to Actions
+                      // Followers Count
                       //
-                      Row(
-                        children: [
-                          //
-                          // Follow
-                          //
-                          BUTTON(
-                            text: "Seguir",
-                            width: 120,
-                            onPressed: () => {
-                              print("seguir"),
-                            },
-                          ),
-                          //
-                          // Poke
-                          //
-                          BUTTON(
-                            width: 120,
-                            text: "Intimar",
-                            primary: false,
-                            onPressed: () => {
-                              print("feed"),
-                            },
-                          ),
-                        ],
+                      Expanded(
+                        flex: 1,
+                        child: RichTitle(
+                          title: 'seguidores',
+                          value: "232",
+                          alignment: CrossAxisAlignment.center,
+                        ),
                       ),
                     ],
                   ),
-                ),
-                //
-                // User Details
-                //
-                Container(
-                  width: double.infinity,
-                  color: Colors.grey[200],
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        //
-                        // Favorite Place
-                        //
-                        RichTitle(
-                          title: "Local preferido",
-                          value: controller.currentUser.mostFavoritePlace.name,
-                        ),
-                        VerticalDivider(width: 25),
-                        //
-                        // Favorite Music Type
-                        //
-                        RichTitle(
-                          title: "Gosto musical",
-                          value: controller.currentUser.favoriteMusicStyle,
-                        ),
-                        VerticalDivider(width: 25),
-                        //
-                        // Gender
-                        //
-                        RichTitle(
-                          title: "Sexo",
-                          value: controller.currentUser.gender,
-                        ),
-                      ],
+                  SizedBox(height: 20),
+                  //
+                  // Call to Actions
+                  //
+                  Row(
+                    children: [
+                      //
+                      // Follow
+                      //
+                      BUTTON(
+                        text: "Seguir",
+                        width: 120,
+                        onPressed: () => {
+                          print("seguir"),
+                        },
+                      ),
+                      //
+                      // Poke
+                      //
+                      BUTTON(
+                        width: 120,
+                        text: "Intimar",
+                        primary: false,
+                        onPressed: () => {
+                          print("feed"),
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            //
+            // User Details
+            //
+            Container(
+              width: double.infinity,
+              color: Colors.grey[200],
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    //
+                    // Favorite Place
+                    //
+                    RichTitle(
+                      title: "Local preferido",
+                      value: user.mostFavoritePlace.name,
                     ),
-                  ),
+                    VerticalDivider(width: 25),
+                    //
+                    // Favorite Music Type
+                    //
+                    RichTitle(
+                      title: "Gosto musical",
+                      value: user.favoriteMusicStyle,
+                    ),
+                    VerticalDivider(width: 25),
+                    //
+                    // Gender
+                    //
+                    RichTitle(
+                      title: "Sexo",
+                      value: user.gender,
+                    ),
+                  ],
                 ),
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(AppStyles.spacing_normal),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TEXT(
-                        text: "Locais favoritos",
-                        weight: FontWeight.bold,
-                        size: 16,
-                        noMargin: true,
-                      ),
-                      SizedBox(height: AppStyles.spacing_normal),
-                      FavoritePlaces(
-                        places: controller.currentUser.favoritePlaces,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
-            body: userGallery(
-                _galleryPageController, screenSize, controller.currentUser),
-          );
-        },
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(AppStyles.spacing_normal),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TEXT(
+                    text: "Locais favoritos",
+                    weight: FontWeight.bold,
+                    size: 16,
+                    noMargin: true,
+                  ),
+                  SizedBox(height: AppStyles.spacing_normal),
+                  FavoritePlaces(
+                    places: user.favoritePlaces,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+        body: userGallery(_galleryPageController, screenSize, user),
       ),
     );
   }

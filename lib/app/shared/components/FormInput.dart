@@ -1,7 +1,5 @@
-import 'package:clubbers/app/shared/components/SVGIcon.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 /*
   FORM INPUT COMPONENT
@@ -28,6 +26,7 @@ class FormInput extends StatefulWidget {
   final Function onChanged;
   final Function onSubmitted;
   final IconData icon;
+  final bool error;
 
   const FormInput({
     this.fieldName,
@@ -37,6 +36,7 @@ class FormInput extends StatefulWidget {
     this.onSubmitted,
     this.textInputAction,
     this.icon,
+    this.error = false,
   });
 
   @override
@@ -71,7 +71,7 @@ class _FormInputState extends State<FormInput> {
       padding: const EdgeInsets.only(bottom: AppStyles.spacing_normal),
       child: Stack(
         children: [
-          fieldShape(),
+          fieldShape(widget.error),
           fieldIcon(focusNode, widget),
           customInputLabel(textFieldController, focusNode, widget),
           customTextField(textFieldController, focusNode, widget),
@@ -172,15 +172,17 @@ TextField customTextField(textFieldController, focusNode, widget) {
   This widget is responsable for the shape of the input:
   border, border-radius, background
 */
-Container fieldShape() {
+Container fieldShape(error) {
   return Container(
     height: 55,
     decoration: BoxDecoration(
       color: Color(0xFFF4F9FE),
       borderRadius: AppStyles.borderRadius10,
       border: Border.all(
-        width: 1.0,
-        color: AppStyles.bodyColor.withOpacity(0.3),
+        width: error ? 1.5 : 1.0,
+        color: error
+            ? AppStyles.primaryColor.withOpacity(0.5)
+            : AppStyles.bodyColor.withOpacity(0.3),
       ),
     ),
   );

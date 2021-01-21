@@ -4,25 +4,15 @@ import 'package:clubbers/app/shared/components/CustomAppBar.dart';
 import 'package:clubbers/app/shared/components/EventItem.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get.dart';
 import 'package:sticky_infinite_list/sticky_infinite_list.dart';
 import 'events_controller.dart';
 
-class EventsPage extends StatefulWidget {
-  final String title;
-  const EventsPage({Key key, this.title = "Events"}) : super(key: key);
-
-  @override
-  _EventsPageState createState() => _EventsPageState();
-}
-
-class _EventsPageState extends ModularState<EventsPage, EventsController> {
-  //use 'controller' variable to access controller
-
+class EventsPage extends GetView {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    EventsController controller = Get.put(EventsController());
+
     return Scaffold(
       //
       // App bar
@@ -35,8 +25,8 @@ class _EventsPageState extends ModularState<EventsPage, EventsController> {
           showback: false,
         ),
       ),
-      body: Observer(
-        builder: (context) {
+      body: GetBuilder(
+        builder: (_) {
           //
           // Get events object
           //
@@ -119,8 +109,7 @@ class _EventsPageState extends ModularState<EventsPage, EventsController> {
                         children: [
                           for (var event in eventItems[index])
                             EventItem(
-                              onTap: () =>
-                                  Modular.to.pushNamed('/event/${event.id}'),
+                              onTap: () => Get.toNamed('/event', arguments: {'id': event.id}),
                               eventDate: DateTime.parse(event.date),
                               eventImage: event.banner,
                             ),

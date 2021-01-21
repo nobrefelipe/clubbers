@@ -5,7 +5,7 @@ User currentUser;
 
 final List<User> users = [
   User(
-    id: "1",
+    id: "6090200f-6f09-434a-a92e-f2728ef39d85",
     fullName: 'Felipe Nobre Ferreira',
     email: "nobrefelipe1@gmail.com",
     password: "123",
@@ -19,12 +19,13 @@ final List<User> users = [
       'barzinhos',
     ],
     gallery: [
-      'https://instagram.fbsb7-1.fna.fbcdn.net/v/t51.2885-15/e35/57232478_135737317499487_2783204489266797054_n.jpg?_nc_ht=instagram.fbsb7-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=VUg_q_ROXz0AX93jO2u&tp=1&oh=7dade53877908da297d9da7db8d55c4e&oe=5FEA61BD',
-      'https://instagram.fbsb7-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/82387328_799289590586200_259628308968711844_n.jpg?_nc_ht=instagram.fbsb7-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=gTQccPYy3jcAX97k814&tp=1&oh=c02b6be80a67cef1470d5cbe320c2017&oe=5FE905F1',
-      'https://instagram.fbsb7-1.fna.fbcdn.net/v/t51.2885-15/e35/35928064_1870121386382554_3972512477245079552_n.jpg?_nc_ht=instagram.fbsb7-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=LJRa-iPfUBkAX87E5BD&tp=1&oh=4eb7e30d7b86352cbd3c78e5137a9137&oe=5FE9206F',
+      'https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1567&q=80',
+      'https://images.unsplash.com/photo-1575845977536-a31d0664cac0?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NzF8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1576803645051-ac305113a48a?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Njh8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1578945064939-d4471005910d?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Njd8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60',
     ],
     profilePicture:
-        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+        'https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1567&q=80',
   ),
   User(
     id: "2",

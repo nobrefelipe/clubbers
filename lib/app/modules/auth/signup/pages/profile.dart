@@ -5,19 +5,11 @@ import 'package:clubbers/app/shared/components/logo.dart';
 import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../signup_controller.dart';
+import 'package:get/get.dart';
 
-class PerfilPage extends StatefulWidget {
-  @override
-  _PerfilPageState createState() => _PerfilPageState();
-}
-
-class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
-  //use 'controller' variable to access controller
-
+class SignupProfilePage extends GetView {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -36,7 +28,7 @@ class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
             size: 32,
             color: AppStyles.bodyColor,
           ),
-          onPressed: () => Modular.to.pop(),
+          onPressed: () => Get.back(),
         ),
       ),
       //
@@ -53,7 +45,7 @@ class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
             As this view is the last step in the registration flow
             we observe controller.loading to change to give feedbacl to the user
           */
-          child: Observer(
+          child: GetBuilder(
             builder: (_) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -94,8 +86,7 @@ class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
                           // Description
                           //
                           Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
                             child: Text(
                               "Toque para editar",
                               textAlign: TextAlign.center,
@@ -110,8 +101,7 @@ class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
                             child: Container(
                               width: 90,
                               height: 90,
-                              margin: EdgeInsets.only(
-                                  bottom: AppStyles.spacing_big),
+                              margin: EdgeInsets.only(bottom: AppStyles.spacing_big),
                               decoration: BoxDecoration(
                                 color: Colors.grey[300],
                                 shape: BoxShape.circle,
@@ -126,8 +116,8 @@ class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
                             fieldName: "Nome Completo",
                             textInputAction: TextInputAction.go,
                             keyboardType: TextInputType.text,
-                            onSubmitted: (value) => controller.signup(context),
-                            onChanged: (value) => controller.getName(value),
+                            onSubmitted: (value) => {},
+                            onChanged: (value) => print(value),
                           ),
                           SizedBox(height: 20),
                         ],
@@ -148,29 +138,19 @@ class _PerfilPageState extends ModularState<PerfilPage, SignupController> {
                         //  Go back
                         //
                         GestureDetector(
-                          onTap: () => Modular.to.pop(),
-                          child: Container(
-                              padding: EdgeInsets.all(20),
-                              color: Colors.transparent,
-                              child: Text('Voltar')),
+                          onTap: () => Get.back(),
+                          child:
+                              Container(padding: EdgeInsets.all(20), color: Colors.transparent, child: Text('Voltar')),
                         ),
                         //
                         //  Next step
                         //
-                        Opacity(
-                          opacity: (controller.fullName == '' ||
-                                  controller.fullName == null)
-                              ? 0.4
-                              : 1.0,
-                          child: BUTTON(
-                            text: "Finalizar",
-                            width: 160,
-                            icon: AntDesign.arrowright,
-                            onPressed: () => (controller.fullName == '' ||
-                                    controller.fullName == null)
-                                ? null
-                                : controller.signup(context),
-                          ),
+                        // TODO: disable button if name is empty. See original version
+                        BUTTON(
+                          text: "Finalizar",
+                          width: 160,
+                          icon: AntDesign.arrowright,
+                          onPressed: () => Get.offNamedUntil('/start', (Route route) => false),
                         ),
                       ],
                     ),

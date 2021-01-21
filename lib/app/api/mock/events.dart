@@ -64,8 +64,7 @@ final List<Event> events = [
     artists: ["Astrix", "Ace Venture", "Thalon"],
     description:
         "The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc. The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc.",
-    banner:
-        'https://i.pinimg.com/originals/9c/5f/08/9c5f0823c1a2ccbdee1c2640e675b17a.jpg',
+    banner: 'https://i.pinimg.com/originals/9c/5f/08/9c5f0823c1a2ccbdee1c2640e675b17a.jpg',
   ),
   Event(
     id: "3",
@@ -86,8 +85,7 @@ final List<Event> events = [
     artists: ["Kevinho"],
     description:
         "The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc. The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc.",
-    banner:
-        'https://mattonicomunicacao.com/wp-content/uploads/2020/02/Atitude-67.jpeg',
+    banner: 'https://mattonicomunicacao.com/wp-content/uploads/2020/02/Atitude-67.jpeg',
   ),
   Event(
     id: "4",
@@ -108,8 +106,7 @@ final List<Event> events = [
     artists: ["Kevinho"],
     description:
         "The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc. The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc.",
-    banner:
-        'https://cdn.zomoofficial.com/wp-content/uploads/2020/08/BANNER-NOTICIA-KEVINHO.png',
+    banner: 'https://cdn.zomoofficial.com/wp-content/uploads/2020/08/BANNER-NOTICIA-KEVINHO.png',
   ),
   Event(
     id: "6",
@@ -130,7 +127,6 @@ final List<Event> events = [
     artists: ["Kevinho"],
     description:
         "The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc. The visual builder allows you to rapidly choose and modify your fields for your custom content. Drag and drop rich text fields, geopoints, images, color fields, relational fields, etc.",
-    banner:
-        'https://gigatools-prod.s3.amazonaws.com/user/4386/gigs_listing/ACE-GIGA.png?1504087891',
+    banner: 'https://gigatools-prod.s3.amazonaws.com/user/4386/gigs_listing/ACE-GIGA.png?1504087891',
   ),
 ];

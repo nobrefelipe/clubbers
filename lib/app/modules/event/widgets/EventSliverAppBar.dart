@@ -4,7 +4,7 @@ import 'package:clubbers/app/shared/styles/app_styles.dart';
 import 'package:clubbers/app/shared/styles/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class EventSliverAppBar extends StatelessWidget {
@@ -27,7 +27,7 @@ class EventSliverAppBar extends StatelessWidget {
           size: 32,
           color: AppStyles.bodyColor,
         ),
-        onPressed: () => Modular.to.pop(),
+        onPressed: () => Get.back(),
       ),
       //
       // Page Title
@@ -51,8 +51,7 @@ class EventSliverAppBar extends StatelessWidget {
           TEXT(
             weight: FontWeight.w600,
             size: 12,
-            text: _customFormatDate(
-                DateTime.parse(currentEvent.date), 'd MMMM y'),
+            text: _customFormatDate(DateTime.parse(currentEvent.date), 'd MMMM y'),
           ),
         ],
       ),
