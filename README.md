@@ -11,6 +11,9 @@ Todo: Update readme with a good presentation of the project
 
 <a target="_blank" href="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/appVideo.webm?alt=media&token=b2c878ca-78a7-405c-b263-aca372d62f23"> See recorded screens </a>
 
+
+<img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/app-screens.png?alt=media&token=d191456d-41ce-45bf-adb3-d190e35d11e6"/>
+
 <img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/Screenshot%202021-01-19%20at%2014.32.49.png?alt=media&token=e0f24f0d-d074-4701-80e5-e36a8dc70570" width="250px" style="float:left; max-width: 25%;"/>
 
 <img src="https://firebasestorage.googleapis.com/v0/b/weddy-app-1.appspot.com/o/Screenshot%202021-01-19%20at%2014.32.57.png?alt=media&token=463c3085-a599-49f4-a8e7-4311f709ea17"  width="250px" style="float:left; max-width: 25%;"/>
