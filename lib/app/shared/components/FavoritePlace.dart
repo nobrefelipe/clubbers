@@ -40,8 +40,8 @@ class FavoritePlace extends StatelessWidget {
     final itemSize = deviceWidth / 1.9;
 
     return Container(
-      width: itemSize + 32.0,
-      padding: const EdgeInsets.only(left: 16.0, right: 8.0),
+      width: itemSize,
+      padding: const EdgeInsets.only(left: 16.0),
       child: Stack(
         children: [
           favoritePlaceContent(localName, localAddress, itemSize),
@@ -58,10 +58,10 @@ class FavoritePlace extends StatelessWidget {
 */
 Widget favoritePlaceImage(image, itemSize) {
   return Positioned(
-    right: 0,
-    top: 0,
+    right: 10,
+    top: 16,
     child: Container(
-      width: itemSize - 25,
+      width: itemSize - 35,
       decoration: BoxDecoration(
         boxShadow: [AppStyles.shadowBoxDecorationIntense],
       ),
@@ -78,13 +78,13 @@ Widget favoritePlaceImage(image, itemSize) {
 */
 Widget favoritePlaceContent(localName, localAddress, itemSize) {
   return Positioned(
-    bottom: 0,
+    bottom: 16,
     child: Container(
       width: itemSize - 10,
       height: 180,
       child: ShadowContainer(
           padding: const EdgeInsets.only(
-            top: 85.0,
+            top: 95.0,
             left: 16,
             right: 16,
             bottom: 8.0,
@@ -114,8 +114,8 @@ Widget favoritePlaceContent(localName, localAddress, itemSize) {
 */
 Widget moreIcon() {
   return Positioned(
-    bottom: 12,
-    right: 22,
+    bottom: 25,
+    right: 25,
     child: Transform.rotate(
       angle: 1.6,
       child: Icon(
