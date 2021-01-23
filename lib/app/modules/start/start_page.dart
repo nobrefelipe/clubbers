@@ -1,5 +1,8 @@
+import 'dart:collection';
+
 import 'package:clubbers/app/modules/events/events_page.dart';
 import 'package:clubbers/app/modules/home/home_page.dart';
+import 'package:clubbers/app/modules/map/map_view.dart';
 import 'package:clubbers/app/modules/profile/profile_page.dart';
 import 'package:clubbers/app/shared/components/AppBottomBar.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +55,7 @@ class _StartPageState extends State<StartPage> {
           //
           // Map Module
           //
-          Container(),
+          MapPage(),
           //
           // Events Module
           //
