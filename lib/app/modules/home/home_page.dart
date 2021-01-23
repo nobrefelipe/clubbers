@@ -45,15 +45,18 @@ class HomePage extends GetView {
           */
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(AppStyles.spacing_normal),
+              padding: const EdgeInsets.symmetric(vertical: AppStyles.spacing_normal),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TEXT(
-                    text: "Locais favoritos",
-                    weight: FontWeight.bold,
-                    size: 18,
-                    noMargin: true,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: AppStyles.spacing_normal),
+                    child: TEXT(
+                      text: "Locais favoritos",
+                      weight: FontWeight.bold,
+                      size: 18,
+                      noMargin: true,
+                    ),
                   ),
                   SizedBox(height: AppStyles.spacing_normal),
                   FavoritePlaces(places: locals),
@@ -68,7 +71,7 @@ class HomePage extends GetView {
             the user is following
           */
           SliverPadding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 0),
             sliver: FollowingPlaces(places: locals),
           ),
         ],
