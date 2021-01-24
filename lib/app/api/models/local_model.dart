@@ -1,4 +1,6 @@
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:meta/meta.dart';
+
 import 'event_model.dart';
 import 'post_model.dart';
 
@@ -14,18 +16,20 @@ class Local {
   final String description;
   final List<Event> events;
   final List<String> type;
+  final LatLng position;
 
   const Local({
-    this.posts,
-    this.address,
-    this.phone,
-    this.description,
-    this.followers,
     this.id,
-    this.events,
-    this.type,
-    @required this.email,
     @required this.name,
     @required this.profilePicture,
+    @required this.email,
+    this.posts,
+    this.address,
+    this.followers,
+    this.phone,
+    this.description,
+    this.events,
+    this.type,
+    this.position,
   });
 }

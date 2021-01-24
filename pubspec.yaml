@@ -9,6 +9,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  geolocator: ^6.1.14
+  google_maps_flutter: ^1.1.1
   get: ^3.24.0
   shared_preferences: ^0.5.12+4
   sticky_infinite_list: ^3.0.1
@@ -33,6 +35,7 @@ flutter:
   assets:
     - lib/assets/svg/
     - lib/assets/img/
+    - lib/assets/map_style.json
 
   
   
